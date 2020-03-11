@@ -21,6 +21,7 @@ class ItemsListController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         itemTable.dataSource = self
+        itemTable.delegate = self
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -36,7 +37,7 @@ class ItemsListController: UIViewController {
 extension ItemsListController: ItemsListDelegate {
     func add(item: MarketItem) {
         items.append(item)
-        itemTable.reloadData()
+        itemTable.insertRows(at: [IndexPath(row: items.count - 1, section: 0)], with: .automatic)
     }
 }
 
@@ -55,5 +56,18 @@ extension ItemsListController: UITableViewDataSource {
         rowView.textLabel?.text = item.name
         rowView.detailTextLabel?.text = item.formatPrice()
         return rowView
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            items.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+}
+
+extension ItemsListController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
 }
