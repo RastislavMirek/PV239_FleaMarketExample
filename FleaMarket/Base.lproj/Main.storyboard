@@ -35,7 +35,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="rowReuseID" textLabel="dn2-HU-xNg" detailTextLabel="CEC-Tf-l6C" style="IBUITableViewCellStyleValue1" id="n5b-ct-94y">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="rowReuseID" textLabel="dn2-HU-xNg" detailTextLabel="yYD-lH-O9r" style="IBUITableViewCellStyleValue1" id="n5b-ct-94y">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="n5b-ct-94y" id="thZ-Zn-i01">
@@ -49,7 +49,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CEC-Tf-l6C">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yYD-lH-O9r">
                                                     <rect key="frame" x="350" y="12" width="44" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -74,7 +74,7 @@
                     <navigationItem key="navigationItem" title="FleaMarket Items List" id="Fxe-FX-ZGW">
                         <barButtonItem key="rightBarButtonItem" title="Add Item" id="Ws4-4a-uZF">
                             <connections>
-                                <segue destination="Xve-jA-vBj" kind="show" identifier="addItemSegue" id="ILS-Uo-67Q"/>
+                                <segue destination="Xve-jA-vBj" kind="presentation" identifier="addItemSegue" id="nrx-uO-dGt"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -91,11 +91,11 @@
             <objects>
                 <viewController id="Xve-jA-vBj" customClass="AddItemViewController" customModule="FleaMarket" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wh9-LU-fpf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7TG-ha-epC">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H7m-gM-4Df" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="234"/>
@@ -155,7 +155,7 @@
                                                         <rect key="frame" x="0.0" y="104" width="374" height="30"/>
                                                         <state key="normal" title="Sell Item"/>
                                                         <connections>
-                                                            <action selector="sellButtonPressed:" destination="Xve-jA-vBj" eventType="touchUpInside" id="81j-5a-FOt"/>
+                                                            <action selector="sellButtonPressed:" destination="Xve-jA-vBj" eventType="touchUpInside" id="4X4-Zn-Nfn"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>

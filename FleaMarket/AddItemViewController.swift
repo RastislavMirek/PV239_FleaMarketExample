@@ -25,6 +25,6 @@ class AddItemViewController: UIViewController {
 
     @IBAction func sellButtonPressed(_: Any) {
         itemsListDelegate?.add(item: marketItem)
-        navigationController?.popViewController(animated: true)
+        dismiss(animated: true)
     }
 }
