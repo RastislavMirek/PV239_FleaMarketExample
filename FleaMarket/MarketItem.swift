@@ -6,11 +6,12 @@
 //  Copyright © 2020 FI MU. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct MarketItem {
     var name = "New Item"
     var price = 1
+    var picture: UIImage?
 }
 
 extension MarketItem {

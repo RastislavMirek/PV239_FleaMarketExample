@@ -15,6 +15,8 @@
 		30C42E3A24100BB200AC26C6 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C42E3924100BB200AC26C6 /* AddItemViewController.swift */; };
 		30C42E3C24100FF500AC26C6 /* ItemsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C42E3B24100FF500AC26C6 /* ItemsListController.swift */; };
 		30C42E3E2410118A00AC26C6 /* MarketItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C42E3D2410118A00AC26C6 /* MarketItem.swift */; };
+		30DA046B241931DA00AD6857 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA046A241931DA00AD6857 /* ItemCell.swift */; };
+		30DA046F24198EFF00AD6857 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA046E24198EFF00AD6857 /* UIViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		30C42E3924100BB200AC26C6 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		30C42E3B24100FF500AC26C6 /* ItemsListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsListController.swift; sourceTree = "<group>"; };
 		30C42E3D2410118A00AC26C6 /* MarketItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketItem.swift; sourceTree = "<group>"; };
+		30DA046A241931DA00AD6857 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		30DA046E24198EFF00AD6857 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				30C42E3924100BB200AC26C6 /* AddItemViewController.swift */,
 				30C42E3B24100FF500AC26C6 /* ItemsListController.swift */,
 				30C42E3D2410118A00AC26C6 /* MarketItem.swift */,
+				30DA046A241931DA00AD6857 /* ItemCell.swift */,
+				30DA046E24198EFF00AD6857 /* UIViewExtensions.swift */,
 			);
 			path = FleaMarket;
 			sourceTree = "<group>";
@@ -145,7 +151,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				30C42E3E2410118A00AC26C6 /* MarketItem.swift in Sources */,
+				30DA046F24198EFF00AD6857 /* UIViewExtensions.swift in Sources */,
 				30C42E26240FFD1900AC26C6 /* AppDelegate.swift in Sources */,
+				30DA046B241931DA00AD6857 /* ItemCell.swift in Sources */,
 				30C42E28240FFD1900AC26C6 /* SceneDelegate.swift in Sources */,
 				30C42E3C24100FF500AC26C6 /* ItemsListController.swift in Sources */,
 				30C42E3A24100BB200AC26C6 /* AddItemViewController.swift in Sources */,

@@ -16,12 +16,12 @@ private let ADD_ITEM_SEGUE_ID = "addItemSegue"
 
 class ItemsListController: UIViewController {
     private var items = [MarketItem]()
-    @IBOutlet weak var itemTable: UITableView!
-
+    @IBOutlet weak var itemsCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        itemTable.dataSource = self
-        itemTable.delegate = self
+        itemsCollectionView.dataSource = self
+        itemsCollectionView.delegate = self
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -37,37 +37,30 @@ class ItemsListController: UIViewController {
 extension ItemsListController: ItemsListDelegate {
     func add(item: MarketItem) {
         items.append(item)
-        itemTable.insertRows(at: [IndexPath(row: items.count - 1, section: 0)], with: .automatic)
+        itemsCollectionView.reloadData()
     }
 }
 
-private let ROW_REUSE_ID = "rowReuseID"
-extension ItemsListController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+private let CELL_REUSE_ID = "cellReuseID"
+extension ItemsListController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return items.count
     }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let rowView = tableView.dequeueReusableCell(withIdentifier: ROW_REUSE_ID) else {
-            return UITableViewCell() // should not happen, throwing exception is also OK
-        }
-
-        let item = items[indexPath.row]
-        rowView.textLabel?.text = item.name
-        rowView.detailTextLabel?.text = item.formatPrice()
-        return rowView
-    }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            items.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CELL_REUSE_ID, for: indexPath) as? ItemCell else {
+            return UICollectionViewCell()
         }
+        let item = items[indexPath.item]
+        cell.itemNameLabel.text = item.name
+        cell.itemPriceLabel.text = item.formatPrice()
+        cell.itemImageView.image = item.picture
+        return cell
     }
 }
 
-extension ItemsListController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+extension ItemsListController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
     }
 }
