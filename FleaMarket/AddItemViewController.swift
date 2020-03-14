@@ -22,16 +22,20 @@ class AddItemViewController: UIViewController {
         marketItem.price = Int(round(priceSlider.value))
         priceLabel.text = marketItem.formatPrice()
     }
-
-    @IBAction func sellButtonPressed(_: Any) {
-        itemsListDelegate?.add(item: marketItem)
-        dismiss(animated: true)
-    }
     
     @IBAction func selectImagePressed(_ sender: Any) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         present(imagePicker, animated: true, completion: nil)
+    }
+
+    @IBAction func cancelButtonPressed(_: Any) {
+        dismiss(animated: true)
+    }
+    
+    @IBAction func sellButtonPressed(_: Any) {
+        itemsListDelegate?.add(item: marketItem)
+        dismiss(animated: true)
     }
 }
 

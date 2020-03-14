@@ -139,7 +139,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="BB6-ki-gK4">
                                                 <rect key="frame" x="20" y="50" width="374" height="244"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="left" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nnc-iS-T1y">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nnc-iS-T1y">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Picture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BEu-gT-w2q">
@@ -151,16 +151,23 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Add Image" translatesAutoresizingMaskIntoConstraints="NO" id="wav-bW-5sK">
-                                                                <rect key="frame" x="100" y="0.0" width="60" height="60"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="60" id="52V-vb-HHj"/>
-                                                                    <constraint firstAttribute="width" constant="60" id="wpM-zl-gdz"/>
-                                                                </constraints>
-                                                            </imageView>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IUw-nQ-1i0">
-                                                                <rect key="frame" x="160" y="5" width="214" height="50"/>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="92Q-Sa-CWl">
+                                                                <rect key="frame" x="100" y="0.0" width="274" height="60"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Add Image" translatesAutoresizingMaskIntoConstraints="NO" id="wav-bW-5sK">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="60" id="52V-vb-HHj"/>
+                                                                            <constraint firstAttribute="width" secondItem="wav-bW-5sK" secondAttribute="height" id="5ij-Cq-LSS"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="bottom" secondItem="wav-bW-5sK" secondAttribute="bottom" id="48a-7c-KDI"/>
+                                                                    <constraint firstItem="wav-bW-5sK" firstAttribute="top" secondItem="92Q-Sa-CWl" secondAttribute="top" id="9iR-m4-PCb"/>
+                                                                    <constraint firstItem="wav-bW-5sK" firstAttribute="leading" secondItem="92Q-Sa-CWl" secondAttribute="leading" id="EtK-Es-hBy"/>
+                                                                </constraints>
                                                             </view>
                                                         </subviews>
                                                     </stackView>
@@ -221,6 +228,9 @@
                                                                 <state key="normal" title="Cancel">
                                                                     <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="cancelButtonPressed:" destination="Xve-jA-vBj" eventType="touchUpInside" id="9s9-uO-Iog"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCK-73-yB0">
                                                                 <rect key="frame" x="265" y="26" width="109" height="34"/>
