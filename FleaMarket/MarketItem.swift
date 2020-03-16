@@ -8,14 +8,24 @@
 
 import UIKit
 
-struct MarketItem {
+public struct MarketItem: Codable {
+    let itemId: String
     var name = "New Item"
     var price = 1
     var picture: UIImage?
+    var currency: Currency = .usDollar
+    
+    init() {
+        itemId = UUID().uuidString
+    }
+    
+    private enum CodingKeys: String, CodingKey {
+       case name, price, currency, itemId
+   }
 }
 
 extension MarketItem {
     func formatPrice() -> String {
-        return "$\(price)"
+       return "\(currency == .usDollar ? "$" : "€")\(price)"
     }
 }
