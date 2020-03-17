@@ -14,7 +14,6 @@ class AddItemViewController: UIViewController {
     
     @IBOutlet weak var itemPictureView: UIImageView!
     @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var priceSlider: UISlider!
     
     @IBAction func nameChanged(_ nameTextField: UITextField) {
         marketItem.name = nameTextField.text ?? "New Item"

@@ -162,7 +162,7 @@
                                                                             <constraint firstAttribute="width" secondItem="wav-bW-5sK" secondAttribute="height" id="5ij-Cq-LSS"/>
                                                                         </constraints>
                                                                         <connections>
-                                                                            <outletCollection property="gestureRecognizers" destination="DPG-T4-p1s" appends="YES" id="cn7-8h-WOk"/>
+                                                                            <outletCollection property="gestureRecognizers" destination="IV8-Va-urS" appends="YES" id="GQg-Yb-sRW"/>
                                                                         </connections>
                                                                     </imageView>
                                                                 </subviews>
@@ -216,7 +216,7 @@
                                                                     <segment title="Euro"/>
                                                                 </segments>
                                                                 <connections>
-                                                                    <action selector="currencyValueChanged:" destination="Xve-jA-vBj" eventType="valueChanged" id="ccl-MD-uCc"/>
+                                                                    <action selector="currencyValueChanged:" destination="Xve-jA-vBj" eventType="valueChanged" id="csQ-bc-rRH"/>
                                                                 </connections>
                                                             </segmentedControl>
                                                         </subviews>
@@ -257,7 +257,7 @@
                                                                     <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <action selector="cancelButtonPressed:" destination="Xve-jA-vBj" eventType="touchUpInside" id="9s9-uO-Iog"/>
+                                                                    <action selector="cancelButtonPressed:" destination="Xve-jA-vBj" eventType="touchUpInside" id="vit-L5-Ic6"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCK-73-yB0">
@@ -309,13 +309,12 @@
                     <connections>
                         <outlet property="itemPictureView" destination="wav-bW-5sK" id="Ifa-Ib-0WH"/>
                         <outlet property="priceLabel" destination="ZHE-Zb-57x" id="Zi1-pY-FKP"/>
-                        <outlet property="priceSlider" destination="6eo-db-I4R" id="IU4-xY-xs2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eRq-7c-L6d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="DPG-T4-p1s">
+                <tapGestureRecognizer id="IV8-Va-urS">
                     <connections>
-                        <action selector="selectImagePressed:" destination="Xve-jA-vBj" id="O6M-b0-Ah9"/>
+                        <action selector="selectImagePressed:" destination="Xve-jA-vBj" id="SIx-BO-241"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

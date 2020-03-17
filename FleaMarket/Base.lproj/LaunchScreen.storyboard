@@ -15,17 +15,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flea Market" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDN-CT-bJ4">
-                                <rect key="frame" x="137" y="431.5" width="140" height="33.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FleaMarket" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7BW-Uh-zRK">
+                                <rect key="frame" x="147" y="433" width="120" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="cDN-CT-bJ4" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="tHs-R4-AJe"/>
-                            <constraint firstItem="cDN-CT-bJ4" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="wp8-ks-WDR"/>
+                            <constraint firstItem="7BW-Uh-zRK" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="cCl-K6-0VH"/>
+                            <constraint firstItem="7BW-Uh-zRK" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="cdl-VA-eqP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

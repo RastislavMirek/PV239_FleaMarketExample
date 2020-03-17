@@ -51,7 +51,6 @@ class ItemsListController: UIViewController {
         items.remove(at: indexPath.item)
         itemsCollectionView.deleteItems(at: [indexPath])
         persistItemsList()
-        
     }
 }
 
@@ -118,7 +117,7 @@ extension ItemsListController {
         }
     }
 
-    func formatWithDollar(for item: MarketItem) -> String {
+    private func formatWithDollar(for item: MarketItem) -> String {
         return dollarRate == nil || item.currency == .usDollar ? item.formatPrice() : "$\(round(Double(item.price) * dollarRate! * 100) / 100)"
     }
 }
