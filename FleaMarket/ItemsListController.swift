@@ -19,6 +19,7 @@ private let ITEMS_LIST_KEY = "items_list"
 class ItemsListController: UIViewController {
     private var items = [MarketItem]()
     @IBOutlet weak var itemsCollectionView: UICollectionView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     private(set) var dollarRate: Double? {
         didSet {
@@ -138,13 +139,20 @@ extension ItemsListController {
         guard let jsonData = UserDefaults.standard.data(forKey: ITEMS_LIST_KEY) else {
             return // no items are stored
         }
-        do {
-            items = try JSONDecoder().decode([MarketItem].self, from: jsonData)
-            for i in 0 ..< items.count {
-                items[i].picture = try UIImage(contentsOfFile: imageStorageLocation(for: items[i].itemId).path)
+        activityIndicator.isHidden = false
+        DispatchQueue.global().async {
+            do {
+                self.items = try JSONDecoder().decode([MarketItem].self, from: jsonData)
+                for i in 0 ..< self.items.count {
+                    self.items[i].picture = try UIImage(contentsOfFile: self.imageStorageLocation(for: self.items[i].itemId).path)
+                }
+                DispatchQueue.main.async {
+                    self.activityIndicator.isHidden = true
+                    self.itemsCollectionView.reloadData()
+                }
+            } catch (let error) {
+                print("Error when loading items: \(error)")
             }
-        } catch (let error) {
-            print("Error when loading items: \(error)")
         }
     }
 }
