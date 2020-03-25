@@ -8,13 +8,23 @@
 
 import UIKit
 import Alamofire
+import FirebaseFirestore
+import FirebaseStorage
+import Firebase
+import FirebaseUI
+import FirebaseAuth
 
 protocol ItemsListDelegate: class {
     func add(item: MarketItem)
 }
 
 private let ADD_ITEM_SEGUE_ID = "addItemSegue"
-private let ITEMS_LIST_KEY = "items_list"
+
+private let cloudFirestore = Firestore.firestore()
+private let itemsCollection = cloudFirestore.collection("items")
+private let cloudStorage = Storage.storage()
+private let imagesFolder = cloudStorage.reference(withPath: "itemImages")
+private let auth = FirebaseAuth.Auth.auth()
 
 class ItemsListController: UIViewController {
     private var items = [MarketItem]()
@@ -29,10 +39,20 @@ class ItemsListController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ensureAuth()
+    
         loadItemsList()
         itemsCollectionView.dataSource = self
         itemsCollectionView.delegate = self
         requestDollarRate()
+    }
+    
+    private func ensureAuth() {
+        if auth.currentUser == nil, let authUI = FUIAuth.defaultAuthUI() {
+            authUI.providers = [FUIEmailAuth()]
+            authUI.delegate = self
+            present(authUI.authViewController(), animated: true)
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -49,9 +69,11 @@ class ItemsListController: UIViewController {
     }
     
     private func removeItem(at indexPath: IndexPath) {
+        let itemId = items[indexPath.item].itemId
+        itemsCollection.document(itemId).delete()
+        imagesFolder.child(itemId).delete()
         items.remove(at: indexPath.item)
         itemsCollectionView.deleteItems(at: [indexPath])
-        persistItemsList()
     }
 }
 
@@ -59,12 +81,17 @@ extension ItemsListController: ItemsListDelegate {
     func add(item: MarketItem) {
         items.append(item)
         itemsCollectionView.insertItems(at: [IndexPath(item: items.count - 1, section: 0)])
-        do {
-            try item.picture?.jpegData(compressionQuality: 0.5)?.write(to: try imageStorageLocation(for: item.itemId), options: [.atomicWrite])
-        } catch (let error) {
-            print("Failed to save image for item \(item.name) with error \(error)")
+        
+        if let imageData = item.picture?.jpegData(compressionQuality: 0.5) {
+            imagesFolder.child(item.itemId).putData(imageData)
         }
-        persistItemsList()
+        
+        cloudFirestore.collection("items").document(item.itemId).setData([
+            "itemId": item.itemId,
+            "name": item.name,
+            "price": item.price,
+            "currency": item.currency.rawValue,
+        ])
     }
 }
 
@@ -81,7 +108,22 @@ extension ItemsListController: UICollectionViewDataSource {
         let item = items[indexPath.item]
         cell.itemNameLabel.text = item.name
         cell.itemPriceLabel.text = formatWithDollar(for: item)
-        cell.itemImageView.image = item.picture
+        cell.itemId = item.itemId
+        if let localImage = item.picture {
+            cell.itemImageView.image = localImage
+        } else {
+            imagesFolder.child(item.itemId).getData(maxSize: Int64.max) { (data, error) in
+                guard let data = data else {
+                    print("Error loading image from remote storage: \(String(describing: error))")
+                    return
+                }
+                let picture = UIImage(data: data)
+                self.items[indexPath.item].picture = picture
+                if cell.itemId == item.itemId {
+                    cell.itemImageView.image = picture
+                }
+            }
+        }
         return cell
     }
 }
@@ -126,33 +168,37 @@ extension ItemsListController {
 // MARK: Items Persistance
 
 extension ItemsListController {
-    private func persistItemsList() {
-        do {
-            let itemsAsJson = try JSONEncoder().encode(items)
-            UserDefaults.standard.set(itemsAsJson, forKey: ITEMS_LIST_KEY)
-        } catch(let error) {
-            print("Error when saving items: \(error)")
-        }
-    }
     
     private func loadItemsList() {
-        guard let jsonData = UserDefaults.standard.data(forKey: ITEMS_LIST_KEY) else {
-            return // no items are stored
-        }
         activityIndicator.isHidden = false
-        DispatchQueue.global().async {
-            do {
-                self.items = try JSONDecoder().decode([MarketItem].self, from: jsonData)
-                for i in 0 ..< self.items.count {
-                    self.items[i].picture = try UIImage(contentsOfFile: self.imageStorageLocation(for: self.items[i].itemId).path)
-                }
-                DispatchQueue.main.async {
-                    self.activityIndicator.isHidden = true
-                    self.itemsCollectionView.reloadData()
-                }
-            } catch (let error) {
-                print("Error when loading items: \(error)")
+        itemsCollection.addSnapshotListener { snapshot, err in
+            guard let snapshot = snapshot else {
+                print(err!)
+                return
             }
+            
+            self.items = snapshot.documents.map { document in
+                let data = document.data()
+                if
+                    let name = data["name"] as? String,
+                    let currencyId = data["currency"] as? String,
+                    let currency = Currency(rawValue: currencyId),
+                    let price = data["price"] as? Int,
+                    let itemId = data["itemId"] as? String
+                {
+                    return MarketItem(itemId: itemId, name: name, price: price, currency: currency)
+                }
+                print("Item stored in unkown format: \(data)")
+                return MarketItem()
+            }
+            
+            self.itemsCollectionView.reloadData()
+            self.activityIndicator.isHidden = true
         }
+        
     }
+}
+
+extension ItemsListController: FUIAuthDelegate {
+    // TODO add callbacks
 }

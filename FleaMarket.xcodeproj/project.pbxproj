@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		304A966C2429ACE500D1A318 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 304A966B2429ACE500D1A318 /* GoogleService-Info.plist */; };
+		304A96702429CD8900D1A318 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 304A966F2429CD8900D1A318 /* Podfile */; };
 		30C42E26240FFD1900AC26C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C42E25240FFD1900AC26C6 /* AppDelegate.swift */; };
 		30C42E28240FFD1900AC26C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C42E27240FFD1900AC26C6 /* SceneDelegate.swift */; };
 		30C42E2D240FFD1900AC26C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30C42E2B240FFD1900AC26C6 /* Main.storyboard */; };
@@ -18,10 +20,14 @@
 		30DA046B241931DA00AD6857 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA046A241931DA00AD6857 /* ItemCell.swift */; };
 		30DA046F24198EFF00AD6857 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA046E24198EFF00AD6857 /* UIViewExtensions.swift */; };
 		30DA0474241ED6F700AD6857 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA0473241ED6F700AD6857 /* Currency.swift */; };
-		30DA04772420134E00AD6857 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 30DA04762420134E00AD6857 /* Alamofire */; };
+		30DA04772420134E00AD6857 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 30DA04762420134E00AD6857 /* SwiftPackageProductDependency */; };
+		DC9F0174BCE3C68B8C569102 /* Pods_FleaMarket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3223D71E9CCC233A172722C8 /* Pods_FleaMarket.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A0C6B3FC282F2B1EB28061B /* Pods-FleaMarket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FleaMarket.release.xcconfig"; path = "Target Support Files/Pods-FleaMarket/Pods-FleaMarket.release.xcconfig"; sourceTree = "<group>"; };
+		304A966B2429ACE500D1A318 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		304A966F2429CD8900D1A318 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		30C42E22240FFD1900AC26C6 /* FleaMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FleaMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30C42E25240FFD1900AC26C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30C42E27240FFD1900AC26C6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +41,8 @@
 		30DA046A241931DA00AD6857 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		30DA046E24198EFF00AD6857 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		30DA0473241ED6F700AD6857 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		3223D71E9CCC233A172722C8 /* Pods_FleaMarket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FleaMarket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		562EB2D9CDF82260189228AE /* Pods-FleaMarket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FleaMarket.debug.xcconfig"; path = "Target Support Files/Pods-FleaMarket/Pods-FleaMarket.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +50,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30DA04772420134E00AD6857 /* Alamofire in Frameworks */,
+				30DA04772420134E00AD6857 /* BuildFile in Frameworks */,
+				DC9F0174BCE3C68B8C569102 /* Pods_FleaMarket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +63,8 @@
 			children = (
 				30C42E24240FFD1900AC26C6 /* FleaMarket */,
 				30C42E23240FFD1900AC26C6 /* Products */,
+				D0536AB57CC75B73ED8A936E /* Pods */,
+				CA175FAE5DF00B0D86A627A6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,14 +85,33 @@
 				30C42E2E240FFD1B00AC26C6 /* Assets.xcassets */,
 				30C42E30240FFD1B00AC26C6 /* LaunchScreen.storyboard */,
 				30C42E33240FFD1B00AC26C6 /* Info.plist */,
+				304A966B2429ACE500D1A318 /* GoogleService-Info.plist */,
 				30C42E3924100BB200AC26C6 /* AddItemViewController.swift */,
 				30C42E3B24100FF500AC26C6 /* ItemsListController.swift */,
 				30DA0473241ED6F700AD6857 /* Currency.swift */,
 				30C42E3D2410118A00AC26C6 /* MarketItem.swift */,
 				30DA046A241931DA00AD6857 /* ItemCell.swift */,
 				30DA046E24198EFF00AD6857 /* UIViewExtensions.swift */,
+				304A966F2429CD8900D1A318 /* Podfile */,
 			);
 			path = FleaMarket;
+			sourceTree = "<group>";
+		};
+		CA175FAE5DF00B0D86A627A6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3223D71E9CCC233A172722C8 /* Pods_FleaMarket.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D0536AB57CC75B73ED8A936E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				562EB2D9CDF82260189228AE /* Pods-FleaMarket.debug.xcconfig */,
+				0A0C6B3FC282F2B1EB28061B /* Pods-FleaMarket.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -91,9 +121,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 30C42E36240FFD1B00AC26C6 /* Build configuration list for PBXNativeTarget "FleaMarket" */;
 			buildPhases = (
+				C10CE60145F48108AF7B820D /* [CP] Check Pods Manifest.lock */,
 				30C42E1E240FFD1900AC26C6 /* Sources */,
 				30C42E1F240FFD1900AC26C6 /* Frameworks */,
 				30C42E20240FFD1900AC26C6 /* Resources */,
+				363443EBB5EAE2E907442083 /* [CP] Embed Pods Frameworks */,
+				85E7BF5AC964B6641119C49A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -101,7 +134,7 @@
 			);
 			name = FleaMarket;
 			packageProductDependencies = (
-				30DA04762420134E00AD6857 /* Alamofire */,
+				30DA04762420134E00AD6857 /* SwiftPackageProductDependency */,
 			);
 			productName = FleaMarket;
 			productReference = 30C42E22240FFD1900AC26C6 /* FleaMarket.app */;
@@ -132,7 +165,7 @@
 			);
 			mainGroup = 30C42E19240FFD1900AC26C6;
 			packageReferences = (
-				30DA04752420134E00AD6857 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				30DA04752420134E00AD6857 /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = 30C42E23240FFD1900AC26C6 /* Products */;
 			projectDirPath = "";
@@ -148,13 +181,74 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				304A96702429CD8900D1A318 /* Podfile in Resources */,
 				30C42E32240FFD1B00AC26C6 /* LaunchScreen.storyboard in Resources */,
+				304A966C2429ACE500D1A318 /* GoogleService-Info.plist in Resources */,
 				30C42E2F240FFD1B00AC26C6 /* Assets.xcassets in Resources */,
 				30C42E2D240FFD1900AC26C6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		363443EBB5EAE2E907442083 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FleaMarket/Pods-FleaMarket-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FleaMarket/Pods-FleaMarket-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FleaMarket/Pods-FleaMarket-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85E7BF5AC964B6641119C49A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FleaMarket/Pods-FleaMarket-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FleaMarket/Pods-FleaMarket-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FleaMarket/Pods-FleaMarket-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C10CE60145F48108AF7B820D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FleaMarket-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		30C42E1E240FFD1900AC26C6 /* Sources */ = {
@@ -310,6 +404,7 @@
 		};
 		30C42E37240FFD1B00AC26C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 562EB2D9CDF82260189228AE /* Pods-FleaMarket.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -327,6 +422,7 @@
 		};
 		30C42E38240FFD1B00AC26C6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A0C6B3FC282F2B1EB28061B /* Pods-FleaMarket.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -366,7 +462,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		30DA04752420134E00AD6857 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		30DA04752420134E00AD6857 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
 			requirement = {
@@ -377,9 +473,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		30DA04762420134E00AD6857 /* Alamofire */ = {
+		30DA04762420134E00AD6857 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 30DA04752420134E00AD6857 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 30DA04752420134E00AD6857 /* RemoteSwiftPackageReference */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -19,6 +19,13 @@ public struct MarketItem: Codable {
         itemId = UUID().uuidString
     }
     
+    init(itemId: String, name: String, price: Int, currency: Currency) {
+        self.itemId = itemId
+        self.name = name
+        self.price = price
+        self.currency = currency
+    }
+    
     private enum CodingKeys: String, CodingKey {
        case name, price, currency, itemId
    }

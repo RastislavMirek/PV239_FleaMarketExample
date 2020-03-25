@@ -97,15 +97,16 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="ZmE-ES-02m">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="ZmE-ES-02m">
                                 <rect key="frame" x="197" y="438" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="ZmE-ES-02m" firstAttribute="centerX" secondItem="8SS-vg-FLh" secondAttribute="centerX" id="2Bk-PO-qgs"/>
                             <constraint firstItem="v0r-to-m0N" firstAttribute="bottom" secondItem="zPH-hn-a4Q" secondAttribute="bottom" id="6FA-DS-SWz"/>
                             <constraint firstItem="v0r-to-m0N" firstAttribute="top" secondItem="zPH-hn-a4Q" secondAttribute="top" id="7lN-Vs-FwJ"/>
+                            <constraint firstItem="ZmE-ES-02m" firstAttribute="centerY" secondItem="8SS-vg-FLh" secondAttribute="centerY" id="Qtz-pW-5OS"/>
                             <constraint firstItem="v0r-to-m0N" firstAttribute="leading" secondItem="zPH-hn-a4Q" secondAttribute="leading" id="dGw-Bp-nsP"/>
                             <constraint firstItem="v0r-to-m0N" firstAttribute="trailing" secondItem="zPH-hn-a4Q" secondAttribute="trailing" id="vw5-3j-rYo"/>
                         </constraints>

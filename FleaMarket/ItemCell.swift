@@ -9,7 +9,13 @@
 import UIKit
 
 class ItemCell: UICollectionViewCell {
+    var itemId: String?
     @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var itemNameLabel: UILabel!
     @IBOutlet weak var itemPriceLabel: UILabel!
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        itemImageView.image = nil
+    }
 }
